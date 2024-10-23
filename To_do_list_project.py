@@ -12,6 +12,9 @@ class ToDoList:
     def __init__(self):
         self.tasks = []
     def add_task(self, title):
+        if len(title) < 2:
+            print("Invalid: task cannot be less than 2 characters.")
+            return
         task = Task(title)
         self.tasks.append(task)
         print(f"task '{title}' added.")
